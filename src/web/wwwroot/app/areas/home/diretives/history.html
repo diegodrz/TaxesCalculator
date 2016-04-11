@@ -1,0 +1,11 @@
+﻿<div ng-repeat="invoice in invoices | orderBy:'-dateTime' | limitTo: 5 track by $index">
+    <i class="fa fa-remove" ng-click="invoicesRemove(invoice)"></i> <small>
+    ({{invoice.dateTime | date:"dd/MM/yy HH:mm"}})<br />
+        Foi retido <strong>{{invoice.withheld | currency}}</strong> do valor total de <strong>{{invoice.amount | currency}}</strong>
+    </small>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" style="width: {{((invoice.amount - invoice.withheld) / invoice.amount) * 100}}%"></div>
+        <div class="progress-bar progress-bar-warning" style="width: {{(invoice.withheld / invoice.amount) * 100}}%"></div>
+    </div>
+</div>
+<button class="btn btn-danger pull-right" ng-show="invoices.length > 0" ng-click="invoicesClear()"><i class="fa fa-trash"></i> Limpar</button>

@@ -1,0 +1,30 @@
+﻿<div class="text-right"><small>Valor da nota</small></div>
+<div class="panel">
+    <div class="input-group input-group-lg">
+        <span class="input-group-addon"><strong>R$</strong></span>
+        <input type="number" class="form-control text-right" step="0.01" min="0" ng-model="invoice.amount" ng-change="calculator();">
+    </div>
+</div>
+<div class="panel">
+
+    <div ng-repeat="tax in taxes">
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon fixed">{{tax.code}}</span>
+            <span class="form-control text-right active-{{tax.active}}">{{tax.withheld | currency}}</span>
+        </div>
+    </div>
+
+    <div class="input-group input-group-sm">
+        <span class="input-group-addon fixed"><strong>Valor retido</strong></span>
+        <span class="form-control text-right active-true"><strong>{{invoice.withheld | currency}}</strong></span>
+    </div>
+</div>
+<div class="panel">
+
+    <div class="input-group input-group-lg">
+        <span class="input-group-addon"><strong>Valor liquido</strong></span>
+        <span class="form-control text-right"><strong>{{invoice.total | currency}}</strong></span>
+    </div>
+</div>
+<button class="btn btn-success pull-right" ng-click="invoicesSave(invoice)"><i class="fa fa-list"></i> Salvar</button>
+<button class="btn btn-danger pull-right" ng-click="invoiceReset()"><i class="fa fa-trash"></i> Limpar</button>

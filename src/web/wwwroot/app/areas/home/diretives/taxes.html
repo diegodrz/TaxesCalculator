@@ -1,0 +1,5 @@
+﻿<div class="input-group" ng-repeat="tax in taxes">
+    <span class="input-group-addon fixed"><input ng-disabled="{{user.username != 'admin'}}" type="checkbox" ng-checked="tax.active" ng-model="tax.active" ng-change="calculator(); taxesSave();"> {{tax.code}}</span>
+    <input ng-disabled="{{user.username != 'admin'}}" type="number" class="form-control text-right" ng-model="tax.percent" min="0" step="0.1" ng-change="calculator();" ng-init="oldValue = tax.percent" ng-blur="oldValue != tax.percent && taxesSave();">
+    <span class="input-group-addon">%</span>
+</div>
