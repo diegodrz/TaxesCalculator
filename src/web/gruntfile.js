@@ -27,7 +27,6 @@ module.exports = function (grunt) {
             files: ["TypeScript/*.js"],
             tasks: ["all"]
         }
-        ,
     });
 
     grunt.loadNpmTasks("grunt-contrib-clean");
