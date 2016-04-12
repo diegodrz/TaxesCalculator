@@ -19,5 +19,5 @@ user: company	pass: 123
 I wrote some unit tests in /tests folder<br>
 ![alt tag](https://s18.postimg.org/tvy1jpowp/tests.png)
 
-Tks =)
+Tks =)<br>
 Diego Martins Pereira
