@@ -83,7 +83,7 @@
             if ($scope.user === null)
                 $location.path('/');
 
-            $scope.title = "Calculo de imposto retido";
+            $scope.title = "Cálculo de imposto retido";
 
             $scope.invoiceReset();
             $scope.invoicesLoad();
