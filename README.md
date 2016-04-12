@@ -14,7 +14,7 @@ TODO: Write usage instructions
 
 ## Unit tests
 I wrote some unit tests in /tests folder
-![alt tag](https://postimg.org/image/bc89vs0b1/)
+![alt tag](https://s18.postimg.org/tvy1jpowp/tests.png)
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
