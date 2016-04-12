@@ -1,5 +1,5 @@
 # Taxes Calculator
-Hiring process test to calculate withheld taxes. This small project was developed in Visual Studio 2015, with a blank Asp.net 5 template. I used AngularJs, Bootstrap, Gulp, Bower.
+Hiring process test to calculate withheld taxes. This small project was developed in Visual Studio 2015, with a blank Asp.net 5 template. I used AngularJs, Bootstrap, Gulp and Bower.
 <br><br>
 ![alt tag](https://s23.postimg.org/cn5ldd2t7/screen.png)
 
