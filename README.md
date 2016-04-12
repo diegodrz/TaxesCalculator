@@ -1,5 +1,5 @@
 # Taxes Calculator
-(https://s23.postimg.org/cn5ldd2t7/screen.png)
+!(https://s23.postimg.org/cn5ldd2t7/screen.png)
 Hiring process test to calculate withheld taxes
 
 ## Login
@@ -12,7 +12,7 @@ user: company	pass: 123
 
 ## Unit tests
 I wrote some unit tests in /tests folder<br>
-(https://s18.postimg.org/tvy1jpowp/tests.png)
+!(https://s18.postimg.org/tvy1jpowp/tests.png)
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
