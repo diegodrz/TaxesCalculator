@@ -5,15 +5,15 @@ Hiring process test to calculate withheld taxes. This small project was develope
 
 ## Login
 Login credentials were mocked in login method. There are two users:<br>
-user: admin		pass: 123<br>
-user: company	pass: 123
+- user: admin		pass: 123<br>
+- user: company	pass: 123
 
 ## Mocks
 - The invoices are saved in localStorage
 - The autentication is persisted in sessionStorage
 
 ## Bugs
-1) When a invoice is saved in the history, it does not appear in datetime order
+- When a invoice is saved in the history, it does not appear in datetime order
 
 ## Unit tests
 I wrote some unit tests in /tests folder<br>
