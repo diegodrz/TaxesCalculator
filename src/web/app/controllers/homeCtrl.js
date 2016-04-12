@@ -4,9 +4,9 @@
     angular
         .module('app')
         .controller('HomeCtrl', HomeCtrl)
-        .directive("taxes", function () { return { templateUrl: 'app/areas/home/diretives/taxes.html' } })
-        .directive("calculator", function () { return { templateUrl: 'app/areas/home/diretives/calculator.html' } })
-        .directive("history", function () { return { templateUrl: 'app/areas/home/diretives/history.html' } });
+        .directive("taxes", function () { return { templateUrl: 'app/areas/home/diretives/taxes.html' }; })
+        .directive("calculator", function () { return { templateUrl: 'app/areas/home/diretives/calculator.html' }; })
+        .directive("history", function () { return { templateUrl: 'app/areas/home/diretives/history.html' }; });
 
     function HomeCtrl($scope, $location, User) {
         
@@ -22,7 +22,7 @@
             localStorage.setItem('invoices' + $scope.user.username, JSON.stringify($scope.invoices));
         };
         $scope.invoicesSave = function (invoice) {
-            if (invoice.amount == 0) {
+            if (invoice.amount === 0) {
                 toastr.error('Preencha os dados desta nota');
                 return;
             }
@@ -42,18 +42,18 @@
         };
         $scope.invoicesLoad = function () {
             var invoices = angular.fromJson(localStorage.getItem('invoices' + $scope.user.username));
-            $scope.invoices = (invoices != null) ? invoices : [];
+            $scope.invoices = (invoices !== null) ? invoices : [];
         };
         $scope.invoicesRemove = function (invoice) {
-            var index = $scope.invoices.indexOf(invoice)
+            var index = $scope.invoices.indexOf(invoice);
             $scope.invoices.splice(index, 1);
 
             $scope.invoicesLSSave();
-        }
+        };
 
         $scope.taxesLoad = function () {
             var taxes = angular.fromJson(localStorage.getItem('taxes'));
-            if (taxes == null) {
+            if (taxes === null) {
                 taxes = [
                     { code: 'IR', percent: 1.5, active: true, withheldGratherThan: 10 },
                     { code: 'PIS', percent: 1.65, active: true },
@@ -69,18 +69,18 @@
             toastr.success('Taxas salvas com sucesso!');
         };
 
-        $scope.calculator = function() {
+        $scope.calculator = function () {
             $scope.invoice.withheld = 0;
             angular.forEach($scope.taxes, function (tax) {
                 tax.withheld = (tax.active) ? CalculateWithheld(tax) : 0;
                 $scope.invoice.withheld += tax.withheld;
             });
             $scope.invoice.total = $scope.invoice.amount - $scope.invoice.withheld;
-        }
+        };
 
         $scope.init = function () {
             $scope.user = User.get();
-            if ($scope.user == null)
+            if ($scope.user === null)
                 $location.path('/');
 
             $scope.title = "Calculo de imposto retido";

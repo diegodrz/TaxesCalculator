@@ -1,22 +1,30 @@
 ﻿var gulp = require('gulp');
-var inject = require('gulp-inject');
+var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
-var print = require('gulp-print');
-var angularFilesort = require('gulp-angular-filesort');
+var rename = require('gulp-rename');
+var ngAnnotate = require('gulp-ng-annotate')
 
-gulp.task('vendors-task', function () {
-    var target = gulp.src('index.html');
+var files = [ "app/*.js","app/controllers/*.js" ];
 
-    var vendorStream = gulp.src(['./bower_components/angular-route/angular-route.js',
-                                 './bower_components/angular/angular.js',
-                                 './bower_components/bootstrap/dist/js/bootstrap.js',
-                                 './bower_components/jquery/dist/jquery.js']);
+gulp.task('check', function () {
+    gulp.src(files)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
 
-    return target
-        .pipe(inject(
-            vendorStream.pipe(print())
-                        .pipe(angularFilesort())
-                        .pipe(concat('vendors.js'))
-                        .pipe(gulp.dest('.build/vendors')), { name: 'vendors' }))
-        .pipe(gulp.dest('./views/home/'));
+gulp.task('combine', function () {
+        gulp.src(files)        
+        .pipe(concat('./wwwroot/app'))
+        .pipe(rename('taxes.min.js'))
+        .pipe(ngAnnotate())
+        .pipe(uglify())
+        .pipe(gulp.dest('./wwwroot/app'));
+});
+
+gulp.task('all', function () {
+    gulp.run('check', 'combine');
+    gulp.watch(files, function (evt) {
+        gulp.run('check', 'combine');
+    });
 });
