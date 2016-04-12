@@ -1,13 +1,11 @@
-/// <reference path="../lib/angular/angular.js" />
-/// <reference path="../lib/angular-mocks/angular-mocks.js" />
-/// <reference path="../lib/angular-route/angular-route.js" />
-/// <reference path="../lib/toastr/toastr.js" />
-
-/// <reference path="../app/app.js" />
-/// <reference path="../app/routes.js" />
-/// <reference path="../app/services.js" />
+/// <reference path="../wwwroot/lib/angular/angular.js" />
+/// <reference path="../wwwroot/lib/angular-mocks/angular-mocks.js" />
+/// <reference path="../wwwroot/lib/angular-route/angular-route.js" />
+/// <reference path="../wwwroot/lib/toastr/toastr.js" />
+/// <reference path="../wwwroot/app/taxes.min.js" />
 
 describe("Services", function () {
+
     beforeEach(module("services"));
 
     describe("User", function () {

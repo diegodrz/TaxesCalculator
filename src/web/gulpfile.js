@@ -22,7 +22,7 @@ gulp.task('combine', function () {
         .pipe(gulp.dest('./wwwroot/app'));
 });
 
-gulp.task('all', function () {
+gulp.task('default', function () {
     gulp.run('check', 'combine');
     gulp.watch(files, function (evt) {
         gulp.run('check', 'combine');

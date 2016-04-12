@@ -1,0 +1,19 @@
+﻿.active-true {
+    text-decoration: none;
+    color: #b06833;
+}
+
+.active-false {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.input-group-addon.fixed {
+    min-width: 100px;
+    text-align: left;
+}
+
+.progress {
+    height: 12px;
+    border: none;
+}

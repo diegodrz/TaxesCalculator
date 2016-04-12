@@ -13,6 +13,9 @@
             controller: 'HomeCtrl',
             templateUrl: 'app/areas/home/views/index.html'
         })
+        .when('/logout', {
+            controller: 'LogoutCtrl'
+        })
         .otherwise({
             controller: 'HomeCtrl',
             templateUrl: '404.html'

@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .controller('AccountCtrl', AccountCtrl);
+        .controller('AccountCtrls', AccountCtrl);
 
     function AccountCtrl($scope, $location, User) {
         $scope.title = "Login";
@@ -17,6 +17,11 @@
                 toastr.error("Login e senha inválidos");
                 return false;
             }
+        };
+
+        $scope.logout = function () {
+            User.set(null);
+            $location.path('/');
         };
     }
 
