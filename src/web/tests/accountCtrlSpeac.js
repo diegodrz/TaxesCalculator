@@ -23,6 +23,9 @@ describe('AccountCtrl', function () {
             },
             set: function (user) {
                 sessionStorage.setItem('user', JSON.stringify({ 'username': user }));
+            },
+            clear: function () {
+                sessionStorage.removeItem('user');
             }
         };
 
@@ -30,11 +33,6 @@ describe('AccountCtrl', function () {
 
         ctrl = $controller('AccountCtrl', { $scope: scope, User: user });
     }));
-
-    it('Titulo da pagina deve ser Login', function () {
-        expect(scope.title).toBe('Login');
-
-    });
 
     it('Login de usuario existente', function () {
         expect(scope.login('admin', '123')).toBe(true);

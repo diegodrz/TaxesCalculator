@@ -8,6 +8,9 @@
             },
             set: function (user) {
                 sessionStorage.setItem('user', JSON.stringify({ 'username': user }));
+            },
+            clear: function () {
+                sessionStorage.removeItem('user');
             }
         };
     });

@@ -91,6 +91,11 @@
             $scope.calculator();
         };
 
+        $scope.logout = function () {
+            User.clear();
+            $location.path('/');
+        }
+
         $scope.init();
 
         function CalculateWithheld(tax) {

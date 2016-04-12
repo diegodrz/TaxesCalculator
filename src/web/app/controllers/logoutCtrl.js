@@ -7,8 +7,7 @@
 
     function LogoutCtrl($scope, $location, User) {
         User.set(null);
-        $location.path('/');
-        
+        $location.path('/');        
     }
 
 })();

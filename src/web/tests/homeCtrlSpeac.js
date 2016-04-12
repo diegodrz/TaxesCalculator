@@ -22,6 +22,9 @@ describe('HomeCtrl', function () {
             },
             set: function (user) {
                 sessionStorage.setItem('user', JSON.stringify({ 'username': user }));
+            },
+            clear: function () {
+                sessionStorage.removeItem('user');
             }
         };        
 
@@ -86,6 +89,21 @@ describe('HomeCtrl', function () {
         var lengthAfter = scope.invoices.length;
 
         expect(lengthAfter).toBe(lengthBefore + 1);
+    });
+
+    it('Salva uma nova com valor zerado no historico', function () {
+
+        var invoice = {
+            amount: 0,
+            withheld: 0,
+            total: 0
+        };
+
+        var lengthBefore = scope.invoices.length;
+        scope.invoicesSave(invoice);
+        var lengthAfter = scope.invoices.length;
+
+        expect(lengthAfter).toBe(lengthBefore);
     });
 
     it('Limpa o historico', function () {

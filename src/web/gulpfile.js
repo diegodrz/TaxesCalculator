@@ -23,7 +23,7 @@ var styles = [
     "app/bower_components/font-awesome/css/font-awesome.css",
     "app/bower_components/bootswatch-dist/css/bootstrap.css",
     "app/bower_components/toastr/toastr.css",
-    "app/content/taxes.css"
+    "app/css/taxes.css"
 ];
 
 var fonts = ["app/bower_components/font-awesome/fonts/*"];
