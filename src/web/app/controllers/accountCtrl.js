@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .controller('AccountCtrls', AccountCtrl);
+        .controller('AccountCtrl', AccountCtrl);
 
     function AccountCtrl($scope, $location, User) {
         $scope.title = "Login";

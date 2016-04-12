@@ -1,8 +1,12 @@
-/// <reference path="../wwwroot/lib/angular/angular.js" />
-/// <reference path="../wwwroot/lib/angular-mocks/angular-mocks.js" />
-/// <reference path="../wwwroot/lib/angular-route/angular-route.js" />
-/// <reference path="../wwwroot/lib/toastr/toastr.js" />
-/// <reference path="../wwwroot/app/taxes.min.js" />
+/// <reference path="../app/bower_components/angular/angular.js" />
+/// <reference path="../app/bower_components/angular-mocks/angular-mocks.js" />
+/// <reference path="../app/bower_components/angular-route/angular-route.js" />
+/// <reference path="../app/bower_components/toastr/toastr.js" />
+
+/// <reference path="../app/app.js" />
+/// <reference path="../app/routes.js" />
+/// <reference path="../app/services.js" />
+/// <reference path="../app/controllers/homeCtrl.js" />
 
 describe('HomeCtrl', function () {
 
