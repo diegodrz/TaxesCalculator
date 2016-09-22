@@ -13,7 +13,7 @@ Login credentials were mocked in login method. There are two users:<br>
 - The autentication is persisted in sessionStorage
 
 ## Bugs
-- When a invoice is saved in the history, it does not appear in datetime order
+- When an invoice is saved in the history, it doesn't appear in datetime order
 
 ## Unit tests
 I wrote some unit tests in /tests folder<br>
